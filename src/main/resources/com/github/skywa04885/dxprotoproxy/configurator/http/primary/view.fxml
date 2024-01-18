@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:controller="com.github.skywa04885.dxprotoproxy.configurator.http.primary.PrimaryController" fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox>
+            <children>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Bestand">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onImportOpenAPISpecificationMenuItemPressed" text="Import OpenAPI specification">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onOpenConfigMenuItemPressed" text="Open config">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveConfigMenuItem" mnemonicParsing="false" text="Save config">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveConfigAsMenuItem" mnemonicParsing="false" text="Save config as">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator></MenuItem>
+                            </items>
+                        </Menu>
+                    </menus>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </MenuBar>
+            </children>
+        </VBox>
+    </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="2.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Copyright DX 2023" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <TreeView fx:id="endpointsTreeView" prefHeight="300.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

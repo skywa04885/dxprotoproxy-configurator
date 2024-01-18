@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Code" />
+                  <Spinner fx:id="codeSpinner" editable="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+               </children>
+            </GridPane>
+            <TitledPane text="Headers">
+               <content>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="headersTableView" prefHeight="200.0">
+                          <columns>
+                            <TableColumn fx:id="headersTableViewKeyColumn" prefWidth="127.0" text="Key" />
+                            <TableColumn fx:id="headersTableViewNameColumn" prefWidth="132.0" text="Name" />
+                              <TableColumn fx:id="headersTableViewValueColumn" prefWidth="167.0" text="Value" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane text="Body">
+               <content>
+                  <VBox>
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Format" />
+                              <ComboBox fx:id="formatComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="bodyTableView" prefHeight="200.0">
+                          <columns>
+                            <TableColumn fx:id="bodyTableViewPathColumn" prefWidth="134.0" text="Path" />
+                            <TableColumn fx:id="bodyTableViewNameColumn" prefWidth="113.0" text="Name" />
+                              <TableColumn fx:id="bodyTableViewValueColumn" prefWidth="267.0" text="Value" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <bottom>
+      <ButtonBar prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel" />
+          <Button fx:id="saveButton" mnemonicParsing="false" text="Save" />
+        </buttons>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+</BorderPane>
